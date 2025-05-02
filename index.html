@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+function validateForm(){
+    let username = document.getElementById("username").value;
+    let email = document.getElementById("email").value;
+
+    let usernameValid = true;
+    let emailValid = true;
+
+    // Validación de username
+    if(username.length < 6){
+        document.getElementById("usernameError").innerText = "El nombre de usuario debe tener más de 6 caracteres.";
+        usernameValid = false;
+    } else {
+        document.getElementById("usernameError").innerText = "";
+    }
+
+    // Validación de email
+    if(email.indexOf('@') === -1){
+        document.getElementById("emailError").innerText = "El email tiene que contener un @.";
+        emailValid = false;
+    } else {
+        document.getElementById("emailError").innerText = "";
+    }
+
+    return usernameValid && emailValid;
+}
+</script>
+
+    
+</head>
+<body>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        Username: <input type="text" id="username" required>
+        <span id="usernameError" style="color: red"></span><br>
+        Email: <input type="text" id="email" required>
+        <span id="emailError" style="color: red"></span>
+        <button type="submit">Register</button>
+
+    </form>
+    
+    <script src="archivo.js"></script>
+    <script src="01.js"></script>
+    <script src="02.js"></script>
+    <script src="03.js"></script>
+    <script src="04.js"></script>
+    <script src="05.js"></script>
+    <script src="06.js"></script>
+    <script src="07.js"></script>
+    <script src="08.js"></script>
+    <script src="09.js"></script>
+    <script src="10.js"></script>
+
+    
+</body>
+</html>
